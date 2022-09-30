@@ -1,2 +1,2 @@
 Hello World!  
-[Lab Report 1](https://tron-e.github.io/cse15l-lab-reports/lab-report-1-week0)
+[Lab Report Week 0](https://tron-e.github.io/cse15l-lab-reports/lab-report-1-week0)
