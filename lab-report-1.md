@@ -4,7 +4,8 @@ Today we will learn how to connect a device to a remote server and upload files 
 
 ## Step 1: Download VSCode
 * VSCode is the text editor we will be using to write a java program that will upload to our remote server. 
-* To download VSCode, go to the VSCode page on your preferred browser and download the file corresponding to your device's operating system. 
+* To download VSCode, go to the VSCode page on your preferred browser and download the file corresponding to your device's operating system.  
+[VsCodeImage](VScode_CSE15l_lab1.png)
 
 ## Step 2: Remote Connecting
 * Open up terminal on your computer 
