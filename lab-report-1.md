@@ -33,7 +33,7 @@ Next, when it says enter passphrase, hit enter to leave it blank.
 * Then, log onto the remote location using ssh and create a new directory called .ssh to store the key 
 *       < mk dir .ssh>
 * Next, copy the public key to the remote location using scp
-*       < scp [location of key] [username]@ieng6.ucsd.edu:~/.ssh/authorized_keys 
+*       < scp [location of key] [username]@ieng6.ucsd.edu:~/.ssh/authorized_keys > 
 * You should now be able to log into the remote location using ssh without having to enter a password
 ## Step 6: Optimization
 * To run commands faster in terminal you can use a semicolon (;) to separate lines of code 
