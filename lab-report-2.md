@@ -64,4 +64,16 @@ class SearchEngine {
 
 ## Finding Bugs 
 
+Bug 1: ArrayExamples 
+![fail_input_image](Bug1_fail_input.png)
+The code above is the test case I wrote which caused the bug to display a symptom
+
+![fail_output_image](Bug1_fail_output.png)  
+The screenshot above shows the symptoms of the failure inducing code   
+
+![Bug1](Bug1_location.png)  
+Here is the part of the code which causes the symptoms to appear
+
+Bug Explanation:  
+The connection between the bug and the symptom is seen clearest when we look at the latter half of the output array. There we can see that for an input array of {1,2,3,4,5} that the output is {5,4,3,4,5} instead of {5,4,3,2,1}. We can see that in the terminal it alerts us that the test failed at element <3>, where we wrote a test to expect the third element to have a value of 2 but instead it was 4. Upon looking at the code we can find the bug to be that as we iterate through the input we are actively overwriting the array at the same time. This causes the input to be updated as we progress through each element causing the output to be off once we reach the midpoint of the array. To fix this bug we need to save the input array as a variable and then store the output array as its own variable. That way we do not overwrite the earlier elements when we iterate through the input array to reverse the array. 
 
