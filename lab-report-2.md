@@ -68,10 +68,11 @@ Bug 1: ArrayExamples
 ![fail_input_image](Bug1_fail_input.png)
 The code above is the test case I wrote which caused the bug to display a symptom
 
-![fail_output_image](Bug1_fail_output.png)  
+![fail_output_image](Bug1_fail_ouput.png)
 The screenshot above shows the symptoms of the failure inducing code   
 
-![Bug1](Bug1_location.png)  
+![bug_location_image](Bug%201_location.png)
+
 Here is the part of the code which causes the symptoms to appear
 
 Bug Explanation:  
