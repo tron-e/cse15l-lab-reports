@@ -96,4 +96,17 @@ Bug Explanation:
 * The connection between the bug and the symptom is seen clearest when we look at the latter half of the output array. There we can see that for an input array of {1,2,3,4,5} that the output is {5,4,3,4,5} instead of {5,4,3,2,1}. We can see that in the terminal it alerts us that the test failed at element <3>, where we wrote a test to expect the third element to have a value of 2 but instead it was 4. Upon looking at the code we can find the bug to be that as we iterate through the input we are actively overwriting the array at the same time. This causes the input to be updated as we progress through each element causing the output to be off once we reach the midpoint of the array. To fix this bug we need to save the input array as a variable and then store the output array as its own variable. That way we do not overwrite the earlier elements when we iterate through the input array to reverse the array. 
 
 
-Bug 2:  
+Bug 2: ListExamples
+
+![bug2_input](Bug2_input.png)  
+The code above is the failuring inducing test case I wrote to test the merge method.
+
+![bug2_output](Bug2_output.png)
+The screenshot above shows the symptoms of the bug in the terminal console.
+
+![bug2_location](Bug2_location.png)
+The screenshot above shows the location of the bug within the merge method in the ListExamples file.
+
+Bug Explanation:
+
+Based on the input of two sorted lists the merge method should return a single sorted list. For the inputs I used one list with {apple,can,elate} and the other list had {ben,dead,fade}. This was a basic list since each list had only one word with each letter and the letters were alternating so that the list should be easily sorted. As you can see instead of sorting the lists the output list was just the second list being appeneded to the first list. 
