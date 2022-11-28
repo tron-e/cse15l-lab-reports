@@ -7,12 +7,12 @@ Here is an example of the script we used:
 CPATH=".:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar"
 file="TestListExamples.java"
 
-rm -rf student-submission 
-git clone $1 student-submission 
-cp TestListExamples.java student-submission/
-cd student-submission 
+rm -rf student-submission >results.txt 2> errors.txt
+git clone $1 student-submission >results.txt 2> errors.txt
+cp TestListExamples.java student-submission/ >results.txt 2> errors.txt
+cd student-submission >results.txt 2> errors.txt
 
-if [[ -f $file ]] && [[ -e $file ]]
+if [[ -f $file ]] && [[ -e $file ]] 
 then
     echo "File exists!"
 else
@@ -21,34 +21,41 @@ else
     exit 1
 fi
 
-javac -cp $CPATH *.java 2>errors.txt >results.txt
+javac -cp $CPATH *.java &> output.txt >results.txt 2> errors.txt
 
-if [[ $? -eq 0 ]]
+if [[ $? -eq 0 ]] > results.txt
 then
     echo "Compile succeeded"
+    cat results.txt
+    cat errors.txt
  
 else
     echo "Your program didn't compile"
     echo "Grade 1/5"
+    cat results.txt
+    cat errors.txt
     exit 2
    
 fi
 
-java -cp $CPATH  org.junit.runner.JUnitCore TestListExamples > results.txt 
+java -cp $CPATH  org.junit.runner.JUnitCore TestListExamples >results.txt 2>errors.txt
 
 if [[ $? -eq 0 ]]
 then
     echo "Test Passed"
     echo "Grade 5/5"
     cat results.txt
+    cat errors.txt
     exit
     
 else 
     echo "Test Failed"
     echo "Grade 3/5"
     cat results.txt
+    cat errors.txt
     exit
 fi
+
 ```
 ## Examples of Running the Script
 We used a locally hosted server to run some submissions to test the validity of the script. Here are some of the results below: 
